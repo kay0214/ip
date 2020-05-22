@@ -32,7 +32,7 @@ health_check() {
                echo -n -e "\rapplication not started"
             else
                 echo "code is $status_code"
-                if [ "$status_code" == "200" ];then
+                if [ $status_code -eq 200 ];then
                     break
                 fi
             fi
