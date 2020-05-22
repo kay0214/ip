@@ -15,10 +15,17 @@ import javax.servlet.http.HttpServletRequest;
  * @description
  */
 @RestController
-@RequestMapping("/ip")
+@RequestMapping("/")
 public class ShowIpController {
 
-    @GetMapping("/show")
+    @GetMapping("/")
+    public String index(HttpServletRequest request){
+        String ip = getIp(request);
+        System.out.println("ip:[" + ip + "]");
+        return "thanks";
+    }
+
+    @GetMapping("/ip/show")
     public String show(HttpServletRequest request){
         String ip = getIp(request);
         System.out.println("ip:[" + ip + "]");
